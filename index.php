@@ -13,9 +13,9 @@
 <body>
     <h2>Busca de Dados com ViaCep </h2>
     <div class="tab">
-        <button class="tablinks" onclick="openCity(event, 'Introducao')" id="defaultOpen">Início</button>
-        <button class="tablinks" onclick="openCity(event, 'BuscaDados')" id="buscacep">Busca pelo CEP</button>
-        <button class="tablinks" onclick="openCity(event, 'BuscaCep')">Busca Pelo UF - Cidade</button>
+        <button class="tablinks" onclick="openBusca(event, 'Introducao')" id="defaultOpen">Início</button>
+        <button class="tablinks" onclick="openBusca(event, 'BuscaDados')" id="buscacep">Busca Por CEP</button>
+        <button class="tablinks" onclick="openBusca(event, 'BuscaCep')">Busca Por UF - Cidade</button>
     </div>
 
     <div id="Introducao" class="tabcontent">
