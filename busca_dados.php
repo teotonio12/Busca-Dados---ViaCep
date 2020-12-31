@@ -36,6 +36,16 @@
             $resultado = ZeraResultado();
         }
         return $resultado;
+            ?>
+                <script>
+                    document.getElementById("buscacep").click();
+                </script>
+            <?php
+        
+    }
+
+    function BuscaCep (){
+
     }
 
     function ZeraResultado (){

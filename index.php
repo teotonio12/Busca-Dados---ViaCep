@@ -7,18 +7,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consumindo API</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Busca Cep - ViaCep</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <form action="." method="post">
-        <p>Informe o CEP.</p>
-        <input type="text" placeholder="Digite um cep..." name="cep" value="<?php echo $resultado->cep;?>">
-        <input type="submit">
-        <input type="text" placeholder="rua"    name="rua"    value="<?php echo $resultado->logradouro;?>">
-        <input type="text" placeholder="bairro" name="bairro" value="<?php echo $resultado->bairro;?>">
-        <input type="text" placeholder="cidade" name="cidade" value="<?php echo $resultado->localidade;?>">
-        <input type="text" placeholder="estado" name="estado" value="<?php echo $resultado->uf;?>">
-    </form>
+    <h2>Busca de Dados com ViaCep </h2>
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'Introducao')" id="defaultOpen">Início</button>
+        <button class="tablinks" onclick="openCity(event, 'BuscaDados')" id="buscacep">Busca pelo CEP</button>
+        <button class="tablinks" onclick="openCity(event, 'BuscaCep')">Busca Pelo UF - Cidade</button>
+    </div>
+
+    <div id="Introducao" class="tabcontent">
+        <h3>Introdução</h3>
+        <p>London is the capital city of England.</p>
+        </div>
+
+        <div id="BuscaDados" class="tabcontent">
+            <?php require('form_buscacep.php'); ?>
+        </div>
+
+        <div id="BuscaCep" class="tabcontent">
+        <h3>Busca Cep pelo UF - Cidade</h3>
+        <p>Tokyo is the capital of Japan.</p>
+    </div>
+
+    <?php 
+
+        if(isset($_POST['cep'])){
+            echo "<h2> Resultado  </h2>";
+
+            echo "CEP = ".$resultado->cep."<br>";
+            echo "Logradouro = ".$resultado->logradouro."<br>";
+            echo "Bairro = ".$resultado->bairro."<br>";
+            echo "Cidade = ".$resultado->localidade."<br>";
+            echo "Estado = ".$resultado->uf."<br>";
+        }
+        
+    
+    ?>
+
+    
+    <script src="js/script.js"></script>
+    
 </body>
 </html>
