@@ -1,5 +1,6 @@
 <?php 
     include_once('busca_dados.php');
+    $resultado = BuscaDados();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
