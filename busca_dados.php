@@ -1,37 +1,54 @@
 <?php 
 
     function BuscaDados () {
-        //inicia todas as variaveis zeradas para não dar erro, caso não tenha sido informada
-        $resultado = (object) [
-            'cep' => '',
-            'logradouro' => '',
-            'bairro' => '',
-            'localidade' => '',
-            'uf' => ''
-        ];
-
+       
         //verifica se foi informado o cep
         if(isset ($_POST['cep'])){
 
             //pega o valor informado
             $cep = $_POST['cep'];
 
-            //substitui tudo que não é numero  por vazio
-            $cep = preg_replace('/[^0-9]/','',$cep);
+            //filtra os numeros do valor informado
+            $cep = FilterCep($cep);
 
-            //verifica se contem 8 numeros separados ou nao por - , após a quinto caracter
-            if(preg_match('/^[0-9]{5}-?[0-9]{3}$/',$cep)){
+            //verifica se é valido
+            if( ValidCep ($cep)){
 
-                //recebe os dados pela função 
+                //recebe os dados
                 $resultado = BuscaDadosViaCep($cep);
 
             } else {//se não for um cep valido não realiza a consulta e os objetos continuam vazio
                 
-                //informa cep invalido
+                $resultado = ZeraResultado();
+
+                //informa que o cep é inválido
                 $resultado->cep = 'CEP inválido';
             } 
+        } else {
+            $resultado = ZeraResultado();
         }
         return $resultado;
+    }
+
+    function ZeraResultado (){
+        //inicia todos os valores vazios
+        return (object) [
+            'cep' => '',
+            'logradouro' => '',
+            'bairro' => '',
+            'localidade' => '',
+            'uf' => ''
+        ];
+    }
+
+    function FilterCep (String $cep):String {
+        //filtra por apenas numeros
+        return preg_replace('/[^0-9]/','',$cep);
+    }
+
+    function ValidCep (String $cep) :bool{
+        //verifica se contem 8 numeros separados ou nao por - , após a quinto caracter
+        return preg_match('/^[0-9]{5}-?[0-9]{3}$/',$cep);
     }
 
     function BuscaDadosViaCep (String $cep){
