@@ -17,6 +17,14 @@
                 //recebe os dados
                 $resultado = BuscaDadosViaCep($cep);
 
+                //verifica se existe o cep
+                if(property_exists($resultado,'erro')){
+                    $resultado = ZeraResultado();
+
+                    //informa que o cep não foi encontrado
+                    $resultado->cep = 'CEP Não Encontrado';
+                }
+
             } else {//se não for um cep valido não realiza a consulta e os objetos continuam vazio
                 
                 $resultado = ZeraResultado();
