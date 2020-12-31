@@ -1,11 +1,20 @@
 <?php 
 
-    $cep = "78217081";
+    $resultado = (object) [
+        'cep' => '',
+        'logradouro' => '',
+        'bairro' => '',
+        'localidade' => '',
+        'uf' => ''
+    ];
 
-    $url = 'https://viacep.com.br/ws/'.$cep.'/json/';
 
-    $resultado = json_decode(file_get_contents($url));
+    if(isset ($_POST['cep'])){
+        $cep = $_POST['cep'];
 
-    var_dump($resultado);
+        $viacep = 'https://viacep.com.br/ws/'.$cep.'/json/';
+
+        $resultado = json_decode(file_get_contents($viacep));
+    }
 
 ?>
