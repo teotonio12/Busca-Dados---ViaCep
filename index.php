@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Busca Cep - ViaCep</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <h2>Busca de Dados com ViaCep </h2>
@@ -20,7 +21,9 @@
 
     <div id="Introducao" class="tabcontent">
         <h3>Introdução</h3>
-        <p>London is the capital city of England.</p>
+        <p>Como Utilizar .</p>
+        <p>Instruções</p>
+        <p>Dúvidas</p>
         </div>
 
         <div id="BuscaDados" class="tabcontent">
@@ -28,13 +31,14 @@
         </div>
 
         <div id="BuscaCep" class="tabcontent">
-        <h3>Busca Cep pelo UF - Cidade</h3>
-        <p>Tokyo is the capital of Japan.</p>
+            <?php require('form_buscacep.php'); ?>
     </div>
 
     <?php 
 
         if(isset($_POST['cep'])){
+
+            
             echo "<h2> Resultado  </h2>";
 
             echo "CEP = ".$resultado->cep."<br>";
