@@ -45,7 +45,8 @@
     }
 
     function BuscaCep (){
-
+        //verifica se foi informado o uf, como os tres dados são obrigatorio, consequentemente informou os tres
+        if(isset ($_POST['cep'])){  
     }
 
     function ZeraResultado (){
