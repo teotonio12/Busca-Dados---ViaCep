@@ -15,9 +15,22 @@ $erro_buscacomdados = '';
             //verifica se UF é valida
             if( ValidUF ($uf)){
 
-                $resultado = BuscaDadosViaCep ($uf,$cidade,$logradouro);
+                if( ValidCidade ($cidade)){
+                    
+                    if( ValidLogradouro ($logradouro)){
 
-                return $resultado;
+                        $resultado = BuscaDadosViaCep ($uf,$cidade,$logradouro);
+
+                        return $resultado;
+
+                    } else {
+                        $GLOBALS['erro_buscacomdados'] = "Consulta de Logradouro com Minimo de 3 caracteres";
+                    }
+
+                } else {
+                    $GLOBALS['erro_buscacomdados'] = "Consulta de Cidade com Minimo de 3 caracteres";
+                }
+
             } else {
                 $resultado = ZeraResultado();
 
@@ -35,6 +48,28 @@ $erro_buscacomdados = '';
  
         //retorna os dados como um objeto
         return json_decode(file_get_contents($viacep));
+    }
+
+    function ValidCidade (String $cidade):bool {
+        //verifica se tem mais de 3 caracteres       
+        $contCaracter = strlen($cidade);
+
+        if ($contCaracter > 3) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    function ValidLogradouro (String $logradouro):bool {
+        //verifica se tem mais de 3 caracteres       
+        $contCaracter = strlen($logradouro);
+
+        if ($contCaracter > 3) {
+            return true;
+        } else {
+            return false;
+        }
     }
  
     function ValidUF (String $uf) :bool{
