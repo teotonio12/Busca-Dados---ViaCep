@@ -1,6 +1,8 @@
 <?php 
+//definição da variavel de erro Global
+$erro_buscacomcep = '';
 
-    function BuscaDados () {
+    function BuscaComCep () {
        
         //verifica se foi informado o cep
         if(isset ($_POST['cep'])){
@@ -15,14 +17,14 @@
             if( ValidCep ($cep)){
 
                 //recebe os dados
-                $resultado = BuscaDadosViaCep($cep);
+                $resultado = BuscaCepViaCep($cep);
 
                 //verifica se existe o cep
                 if(property_exists($resultado,'erro')){
                     $resultado = ZeraResultado();
 
                     //informa que o cep não foi encontrado
-                    $resultado->cep = 'CEP Não Encontrado';
+                    $GLOBALS['erro_buscacomcep'] = 'CEP Não Encontrado';
                 }
 
             } else {//se não for um cep valido não realiza a consulta e os objetos continuam vazio
@@ -30,7 +32,7 @@
                 $resultado = ZeraResultado();
 
                 //informa que o cep é inválido
-                $resultado->cep = 'CEP inválido';
+                $GLOBALS['erro_buscacomcep'] = 'CEP inválido';
             } 
         } else {
             $resultado = ZeraResultado();
@@ -44,10 +46,6 @@
         
     }
 
-    function BuscaCep (){
-        //verifica se foi informado o uf, como os tres dados são obrigatorio, consequentemente informou os tres
-        if(isset ($_POST['cep'])){  
-    }
 
     function ZeraResultado (){
         //inicia todos os valores vazios
@@ -70,7 +68,7 @@
         return preg_match('/^[0-9]{5}-?[0-9]{3}$/',$cep);
     }
 
-    function BuscaDadosViaCep (String $cep){
+    function BuscaCepViaCep (String $cep){
         //busca o endereço com a API ViaCep
         $viacep = 'https://viacep.com.br/ws/'.$cep.'/json/';
 

@@ -1,6 +1,8 @@
 <?php 
-    include_once('busca_dados.php');
-    $resultado = BuscaDados();
+    include_once('busca_comcep.php');
+    include_once('busca_comdados.php');
+    $resultado_cep = BuscaComCep();
+    $resultado_dados = BuscaComDados();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,43 +19,26 @@
 </style>
 <body>
     <h2>Busca de Dados com ViaCep </h2>
+    <!-- Conteudos dividos por abas -->
     <div class="tab">
         <button class="tablinks" onclick="openBusca(event, 'Introducao')" id="defaultOpen">Início</button>
-        <button class="tablinks" onclick="openBusca(event, 'BuscaDados')" id="buscacep">Busca Por CEP</button>
-        <button class="tablinks" onclick="openBusca(event, 'BuscaCep')">Busca Por UF - Cidade</button>
+        <button class="tablinks" onclick="openBusca(event, 'BuscaComCep')" id="buscacep">Busca Por CEP</button>
+        <button class="tablinks" onclick="openBusca(event, 'BuscaComDados')">Busca Por UF - Cidade</button>
     </div>
 
     <div id="Introducao" class="tabcontent">
-        <h3>Introdução</h3>
-        <p>Como Utilizar .</p>
-        <p>Instruções</p>
-        <p>Dúvidas</p>
-        </div>
-
-        <div id="BuscaDados" class="tabcontent">
-            <?php require('form_buscacep.php'); ?>
-        </div>
-
-        <div id="BuscaCep" class="tabcontent">
-            <?php require('form_buscadados.php'); ?>
+        <?php require('introducao.php'); ?>
     </div>
 
-    <?php 
+    <div id="BuscaComCep" class="tabcontent">
+        <?php require('form_buscacomcep.php'); ?>
+    </div>
 
-        if(isset($_POST['cep'])){
+    <div id="BuscaComDados" class="tabcontent">
+        <?php require('form_buscacomdados.php'); ?>
+    </div>
 
-            
-            echo "<h2> Resultado  </h2>";
-
-            echo "CEP = ".$resultado->cep."<br>";
-            echo "Logradouro = ".$resultado->logradouro."<br>";
-            echo "Bairro = ".$resultado->bairro."<br>";
-            echo "Cidade = ".$resultado->localidade."<br>";
-            echo "Estado = ".$resultado->uf."<br>";
-        }
-        
-    
-    ?>
+    <?php require('exibe_resultado.php'); ?>
 
     
     <script src="js/script.js"></script>
