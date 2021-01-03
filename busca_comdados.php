@@ -12,7 +12,7 @@ $erro_buscacomdados = '';
             $cidade = $_POST['cidade'];
             $logradouro = $_POST['logradouro'];
 
-            //filta as informações apenas letras
+            //filta as caracteres
 
             //verifica se é valida
             if( ValidUF ($uf)){
