@@ -21,22 +21,19 @@ $erro_buscacomcep = '';
 
                 //verifica se existe o cep
                 if(property_exists($resultado,'erro')){
-                    $resultado = ZeraResultado();
 
                     //informa que o cep não foi encontrado
                     $GLOBALS['erro_buscacomcep'] = 'CEP Não Encontrado';
                 }
 
             } else {//se não for um cep valido não realiza a consulta e os objetos continuam vazio
-                
-                $resultado = ZeraResultado();
+            
 
                 //informa que o cep é inválido
                 $GLOBALS['erro_buscacomcep'] = 'CEP inválido';
             } 
-        } else {
-            $resultado = ZeraResultado();
-        }
+        } 
+        
         return $resultado;
             ?>
                 <script>
@@ -47,16 +44,6 @@ $erro_buscacomcep = '';
     }
 
 
-    function ZeraResultado (){
-        //inicia todos os valores vazios
-        return (object) [
-            'cep' => '',
-            'logradouro' => '',
-            'bairro' => '',
-            'localidade' => '',
-            'uf' => ''
-        ];
-    }
 
     function FilterCep (String $cep):String {
         //filtra por apenas numeros

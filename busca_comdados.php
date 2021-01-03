@@ -12,7 +12,9 @@ $erro_buscacomdados = '';
             $cidade = $_POST['cidade'];
             $logradouro = $_POST['logradouro'];
 
-            //verifica se UF é valida
+            //filta as informações apenas letras
+
+            //verifica se é valida
             if( ValidUF ($uf)){
 
                 if( ValidCidade ($cidade)){
@@ -21,7 +23,11 @@ $erro_buscacomdados = '';
 
                         $resultado = BuscaDadosViaCep ($uf,$cidade,$logradouro);
 
-                        return $resultado;
+                            //verifica se existe o resultado foi encontrado
+                            if(count($resultado) == 0){
+                                //informa que o cep não foi encontrado
+                                $GLOBALS['erro_buscacomdados'] = 'Nenhum CEP Não Encontrado';
+                            } 
 
                     } else {
                         $GLOBALS['erro_buscacomdados'] = "Consulta de Logradouro com Minimo de 3 caracteres";
@@ -32,12 +38,12 @@ $erro_buscacomdados = '';
                 }
 
             } else {
-                $resultado = ZeraResultado();
 
                 $GLOBALS['erro_buscacomdados'] = "UF Inválida";
             }
 
         }
+        return $resultado;
 
     }
 
@@ -54,7 +60,7 @@ $erro_buscacomdados = '';
         //verifica se tem mais de 3 caracteres       
         $contCaracter = strlen($cidade);
 
-        if ($contCaracter > 3) {
+        if ($contCaracter >= 3) {
             return true;
         } else {
             return false;
@@ -65,7 +71,7 @@ $erro_buscacomdados = '';
         //verifica se tem mais de 3 caracteres       
         $contCaracter = strlen($logradouro);
 
-        if ($contCaracter > 3) {
+        if ($contCaracter >= 3) {
             return true;
         } else {
             return false;
