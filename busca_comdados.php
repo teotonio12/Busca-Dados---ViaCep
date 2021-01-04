@@ -17,10 +17,13 @@ $erro_buscacomdados = '';
             //verifica se é valida
             if( ValidUF ($uf)){
 
+                //verifica se possui mais q 3 caracetes
                 if( ValidCidade ($cidade)){
                     
+                    //verifica se possui mais q 3 caracteres
                     if( ValidLogradouro ($logradouro)){
 
+                        //busca os dados ViaCep
                         $resultado = BuscaDadosViaCep ($uf,$cidade,$logradouro);
 
                             //verifica se existe o resultado foi encontrado
