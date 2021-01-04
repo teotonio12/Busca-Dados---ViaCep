@@ -60,6 +60,10 @@ $erro_buscacomdados = '';
     }
 
     function ValidCidade (String $cidade):bool {
+        
+        //retira os caracteres especiais para a conta
+        $cidade =  preg_replace('/[^aA-zZ]/','',$cidade);
+
         //verifica se tem mais de 3 caracteres       
         $contCaracter = strlen($cidade);
 
@@ -71,6 +75,10 @@ $erro_buscacomdados = '';
     }
     
     function ValidLogradouro (String $logradouro):bool {
+
+        //retira os caracteres especiais para a conta
+        $logradouro =  preg_replace('/[^aA-zZ]/','',$logradouro);
+
         //verifica se tem mais de 3 caracteres       
         $contCaracter = strlen($logradouro);
 
