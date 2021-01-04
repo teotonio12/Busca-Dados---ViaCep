@@ -36,7 +36,10 @@ if(isset($_POST['cep'])){
     }
 }
 
+//verifica se houve consulta com dados
 if(isset($_POST['uf'])){
+
+    //verifica se houve erros na consulta
     if($erro_buscacomdados == ''){
         echo "
             <body>
@@ -68,6 +71,7 @@ if(isset($_POST['uf'])){
             </body>
         ";
     } else {
+        //exibe o erro da consulta
         echo $erro_buscacomdados;
     }
 }
