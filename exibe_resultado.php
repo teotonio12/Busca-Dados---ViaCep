@@ -1,7 +1,10 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <?php 
 
+//verifica se houve consulta com Cep
 if(isset($_POST['cep'])){
+
+    //verifica se na consulta não houve erros
     if($erro_buscacomcep == ''){
     
         echo "
@@ -28,10 +31,10 @@ if(isset($_POST['cep'])){
         ";
 
     } else {
+        //exibe o erro da consulta
         echo $erro_buscacomcep;
     }
 }
-
 
 if(isset($_POST['uf'])){
     if($erro_buscacomdados == ''){
