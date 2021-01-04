@@ -35,15 +35,35 @@ if(isset($_POST['cep'])){
 
 if(isset($_POST['uf'])){
     if($erro_buscacomdados == ''){
+        echo "
+            <body>
+                <div class='w3-container'>
+                    <table class='w3-table w3-striped'>
+                        <tr>
+                            <th>CEP</th>
+                            <th>Logradouro</th>
+                            <th>Bairro</th>
+                            <th>Localidade</th>
+                            <th>UF</th>
+                        </tr>    
+        ";
         foreach($resultado_dados as $obj)
         {
-            echo "CEP = ".$obj->cep."<br>";
-            echo "Logradouro = ".$obj->logradouro."<br>";
-            echo "Bairro = ".$obj->bairro."<br>";
-            echo "Cidade = ".$obj->localidade."<br>";
-            echo "Estado = ".$obj->uf."<br>";
-            echo "<hr>";
+                    echo "
+                        <tr>
+                            <th>".$obj->cep."</th>
+                            <th>".$obj->logradouro."</th>
+                            <th>".$obj->bairro."</th>
+                            <th>".$obj->localidade."</th>
+                            <th>".$obj->uf."</th>
+                        </tr>
+                     ";
         }
+        echo "
+                    </table>
+                </div>
+            </body>
+        ";
     } else {
         echo $erro_buscacomdados;
     }
