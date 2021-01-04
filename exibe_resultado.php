@@ -1,15 +1,32 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <?php 
 
 if(isset($_POST['cep'])){
     if($erro_buscacomcep == ''){
     
-        echo "<h2> Resultado  </h2>";
+        echo "
+            <body>
+                <div class='w3-container'>
+                    <table class='w3-table w3-striped'>
+                        <tr>
+                            <th>CEP</th>
+                            <th>Logradouro</th>
+                            <th>Bairro</th>
+                            <th>Localidade</th>
+                            <th>UF</th>
+                        </tr>
+                        <tr>
+                            <th>".$resultado_cep->cep."</th>
+                            <th>".$resultado_cep->logradouro."</th>
+                            <th>".$resultado_cep->bairro."</th>
+                            <th>".$resultado_cep->localidade."</th>
+                            <th>".$resultado_cep->uf."</th>
+                        </tr>
+                    </table>
+                </div>
+            </body>
+        ";
 
-        echo "CEP = ".$resultado_cep->cep."<br>";
-        echo "Logradouro = ".$resultado_cep->logradouro."<br>";
-        echo "Bairro = ".$resultado_cep->bairro."<br>";
-        echo "Cidade = ".$resultado_cep->localidade."<br>";
-        echo "Estado = ".$resultado_cep->uf."<br>";
     } else {
         echo $erro_buscacomcep;
     }
@@ -33,3 +50,4 @@ if(isset($_POST['uf'])){
 }
 
 ?>
+
