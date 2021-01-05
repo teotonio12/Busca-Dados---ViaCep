@@ -13,6 +13,9 @@ if(isset($_POST['cep'])){
                 <div class='w3-container'>
                     <table class='w3-table w3-striped w3-bordered'>
                         <tr>
+                            <th> </th>
+                        </tr>
+                        <tr>
                             <th>CEP</th>
                             <th>Logradouro</th>
                             <th>Bairro</th>

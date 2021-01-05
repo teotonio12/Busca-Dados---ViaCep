@@ -35,12 +35,6 @@ $erro_buscacomcep = '';
         } 
         
         return $resultado;
-            ?>
-                <script>
-                    document.getElementById("buscacep").click();
-                </script>
-            <?php
-        
     }
 
 

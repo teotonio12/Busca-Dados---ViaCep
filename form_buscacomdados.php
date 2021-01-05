@@ -6,11 +6,11 @@
             <input class="input-field" type="text" placeholder="UF" name="uf" required>
         </div>
         <div class="input-container">
-            <i class="fa fa-map-marker icon"></i>
+            <i class="fa fa-map icon"></i>
             <input class="input-field" type="text" placeholder="Cidade" name="cidade" required>
         </div>
         <div class="input-container">
-            <i class="fa fa-map-marker icon"></i>
+            <i class="fa fa-map-signs icon"></i>
             <input class="input-field" type="text" placeholder="Logradouro" name="logradouro" required>
         </div>
 
