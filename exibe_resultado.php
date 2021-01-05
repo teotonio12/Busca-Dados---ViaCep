@@ -33,7 +33,7 @@ if(isset($_POST['cep'])){
 
     } else {
         //exibe o erro da consulta
-        echo $erro_buscacomcep;
+        echo "<h2>".$erro_buscacomcep."</h2>";
     }
 }
 
@@ -74,7 +74,7 @@ if(isset($_POST['uf'])){
         ";
     } else {
         //exibe o erro da consulta
-        echo $erro_buscacomdados;
+        echo "<h2>".$erro_buscacomdados."</h2>";
     }
 }
 
