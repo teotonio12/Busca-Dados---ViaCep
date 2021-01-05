@@ -24,7 +24,7 @@
     <div class="tab">
         <button class="tablinks" onclick="openBusca(event, 'Introducao')" id="defaultOpen">Início</button>
         <button class="tablinks" onclick="openBusca(event, 'BuscaComCep')" id="buscacep">Busca Por CEP</button>
-        <button class="tablinks" onclick="openBusca(event, 'BuscaComDados')">Busca Por UF - Cidade</button>
+        <button class="tablinks" onclick="openBusca(event, 'BuscaComDados')">Busca Por UF-CIDADE-LOGRADOURO</button>
     </div>
 
     <div id="Introducao" class="tabcontent">

@@ -6,28 +6,36 @@
   <div class="row">
     <div class="col-sm-4">
         <h3>Recomendação</h3>
-        <p>CEP - Conter 8 digitos, sem espaços e caracteres especiais.</p>
-        <p>UF - Apenas uf's brasileiros</p>
-        <p>Cidade e Logradouro - Conter no minimo 3 caracteres.</p>
-        <p></p>
+        <ul>
+            <li>CEP - Conter 8 digitos, sem espaços e caracteres especiais.</li>
+            <li>UF - Apenas uf's brasileiros</li>
+            <li>Cidade e Logradouro - Conter no minimo 3 caracteres.</li>
+        </ul>
     </div>
 
     <div class="col-sm-4">
         <h3>Busca Com Cep</h3>
-        <p>Para fazer a consulta utilizando o CEP.</p>
-        <p>Entre na Segunda aba "Busca Por CEP"</p>
-        <p>informe o CEP</p>
-        <p>click em Buscar</p>
-        <p>Aguarde o resultado aparecer abaixo.</p>
+        <ul>
+            <li>Para fazer a consulta utilizando o CEP.</li>
+            <li>Entre na Segunda aba "Busca Por CEP"</li>
+            <li>informe o CEP</li>
+            <li>click em Buscar</li>
+            <li>Aguarde o resultado aparecer abaixo.</li>
+        </ul>
+        
     </div>
 
     <div class="col-sm-4">
-        <h3>Busca Com Dados</h3>
-        <p>Para fazer a consulta utilizando o UF-CIDADE-LOGRADOURO.</p>
-        <p>Entre na Terceira aba "Busca Por UF - Cidade"</p>
-        <p>informe os três campos</p>
-        <p>click em Buscar</p>
-        <p>Aguarde o resultado aparecer abaixo.</p>
+    <h3>Busca Com Dados</h3>
+    <ul>
+        <li>Para fazer a consulta utilizando o UF-CIDADE-LOGRADOURO.</li>
+        <li>Entre na Terceira aba "Busca Por UF-CIDADE-LOGRADOURO"</li>
+        <li>informe os três campos</li>
+        <li>click em Buscar</li>
+        <li>Aguarde o resultado aparecer abaixo.</li>
+    </ul>
+        
+       
     </div>
 
   </div>

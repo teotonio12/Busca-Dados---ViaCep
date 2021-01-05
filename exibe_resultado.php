@@ -8,9 +8,10 @@ if(isset($_POST['cep'])){
     if($erro_buscacomcep == ''){
     
         echo "
+        <h2> Resultado </h2>
             <body>
                 <div class='w3-container'>
-                    <table class='w3-table w3-striped'>
+                    <table class='w3-table w3-striped w3-bordered'>
                         <tr>
                             <th>CEP</th>
                             <th>Logradouro</th>
@@ -42,9 +43,10 @@ if(isset($_POST['uf'])){
     //verifica se houve erros na consulta
     if($erro_buscacomdados == ''){
         echo "
+        <h2> Resultado </h2>
             <body>
                 <div class='w3-container'>
-                    <table class='w3-table w3-striped'>
+                    <table class='w3-table w3-striped w3-bordered'>
                         <tr>
                             <th>CEP</th>
                             <th>Logradouro</th>
