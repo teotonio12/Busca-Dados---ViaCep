@@ -1,4 +1,11 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+#erro {
+  width:300px;
+  margin: auto;
+  border: 2px solid red;
+}
+</style>
 <?php 
 
 //verifica se houve consulta com Cep
@@ -33,7 +40,7 @@ if(isset($_POST['cep'])){
 
     } else {
         //exibe o erro da consulta
-        echo "<h2>".$erro_buscacomcep."</h2>";
+        echo "<br><h2 id='erro'>".$erro_buscacomcep."</h2>";
     }
 }
 
@@ -74,7 +81,7 @@ if(isset($_POST['uf'])){
         ";
     } else {
         //exibe o erro da consulta
-        echo "<h2>".$erro_buscacomdados."</h2>";
+        echo "<br><h2 id='erro'>".$erro_buscacomdados."</h2>";
     }
 }
 
