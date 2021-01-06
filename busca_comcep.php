@@ -21,13 +21,15 @@ $resultado = '';
                 //recebe os dados
                 $resultado = BuscaCepViaCep($cep);
 
-                return $resultado;
+               
 
                 //verifica se existe o cep
                 if(property_exists($resultado,'erro')){
 
                     //informa que o cep não foi encontrado
                     $GLOBALS['erro_buscacomcep'] = 'CEP Não Encontrado';
+                } else {
+                    return $resultado;
                 }
 
             } else {//se não for um cep valido não realiza a consulta e os objetos continuam vazio

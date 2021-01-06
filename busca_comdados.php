@@ -29,13 +29,15 @@ $resultado = '';
                         //busca os dados ViaCep
                         $resultado = BuscaDadosViaCep ($uf,$cidade,$logradouro);
 
-                        return $resultado;
                         
+
                             //verifica se existe o resultado foi encontrado
                             if(count($resultado) == 0){
                                 //informa que o cep não foi encontrado
                                 $GLOBALS['erro_buscacomdados'] = 'Nenhum CEP Não Encontrado';
-                            } 
+                            }  else {
+                                return $resultado;
+                            }
 
                     } else {
                         $GLOBALS['erro_buscacomdados'] = "Consulta de Logradouro com Mínimo de 3 Caracteres";

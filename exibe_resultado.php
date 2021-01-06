@@ -7,7 +7,6 @@
 }
 </style>
 <?php 
-
 //verifica se houve consulta com Cep
 if(isset($_POST['cep'])){
 
