@@ -1,4 +1,4 @@
-<h2>Instalçao do Projeto</h2> 
+<h2>Instalação do Projeto</h2> 
     <p>Devido, este projeto utilizar o PHP que é uma linguagem ,server-side, ou seja é executada no Back End. Emtão, é necessario executa-la em um servidor, mas, não se preocupe que mostrarei como utilizar seu próprio computador em um servidor para a execução do projeto.</p>
     <h3>Caso estaja utilizando um Servidor Externo:</h3>
        <ul>
@@ -23,3 +23,7 @@
             <li> Carregue os arquivos para este caminho em seu computador: "C:\xampp\htdocs".</li>
              <li> o caminho pode variar de acordo com a instalação, consulte as configurações do XAMPP</li>
         </ul>
+        <p> E pronto agora pode acessa-lo atráves do caminho "http://localhost/Busca-Dados---ViaCep-main/" </p>
+        <p> Não se preocupe com o nome complicado, você pode alterar o nome da pasta para um nome mais facil e acessar com o caminho com o nome novo</p>
+       
+ <h2> Como Utilizar </h2>
