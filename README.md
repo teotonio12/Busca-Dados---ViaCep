@@ -76,9 +76,5 @@
              </li>
         </ul>
 <h2> Considerações Finais </h2>
-<<<<<<< HEAD
     <p> Espero que este projeto possa contribuir para a nossa comunidade de desenvolvedores, pois, juntos podemos melhorar cada vez mais</p>
-=======
-    <p> Espero que este projeto, por mais simples que seja, possa contribuir para a nossa comunidade de desenvolvedores, pois, juntos podemos melhorar cada vez mais.</p>
->>>>>>> d486f2e01ec3f0de5e8a357f638646de24dcd4be
     <p> Todo Feedback é bem vindo.</p>
