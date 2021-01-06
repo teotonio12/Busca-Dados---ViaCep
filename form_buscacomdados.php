@@ -1,5 +1,5 @@
-
-    <form action="." method="post" style="max-width:500px;margin:auto">
+    <!-- Formulario pra consultado com os dados  -->
+     <form action="." method="post" style="max-width:500px;margin:auto">
         <h2>Informe o UF - CIDADE - LOGRADOURO</h2>
         <div class="input-container">
             <i class="fa fa-map-marker icon"></i>

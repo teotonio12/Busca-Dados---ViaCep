@@ -63,5 +63,5 @@
                </ul>
         </ul>
 <h2> Considerações Finais </h2>
-    <p> Espero que este projeto, por mais simples que seja, possa contribuir para a nossa comunidade de desenvolvedores, pois, juntos podemos melhorar cada vez mais</p>
+    <p> Espero que este projeto possa contribuir para a nossa comunidade de desenvolvedores, pois, juntos podemos melhorar cada vez mais</p>
     <p> Todo Feedback é bem vindo.</p>

@@ -1,5 +1,4 @@
 <?php
-
 //definição da variavel de erro Global
 $erro_buscacomdados = '';
 
@@ -7,7 +6,7 @@ $erro_buscacomdados = '';
 $resultado = '';
 
     function BuscaComDados (){
-        //verifica se foi informado o uf, como os tres dados são obrigatorio, consequentemente informou os tres
+        //verifica se foi informado o uf, como os tres dados são obrigatório, consequentemente informou os tres
         if(isset ($_POST['uf'])){  
 
             //recebe os dados do formulario
@@ -15,9 +14,7 @@ $resultado = '';
             $cidade = $_POST['cidade'];
             $logradouro = $_POST['logradouro'];
 
-            //filta as caracteres
-
-            //verifica se é valida
+            //verifica se o UF é valido
             if( ValidUF ($uf)){
 
                 //verifica se possui mais q 3 caracetes
@@ -29,13 +26,12 @@ $resultado = '';
                         //busca os dados ViaCep
                         $resultado = BuscaDadosViaCep ($uf,$cidade,$logradouro);
 
-                        
-
                             //verifica se existe o resultado foi encontrado
                             if(count($resultado) == 0){
                                 //informa que o cep não foi encontrado
                                 $GLOBALS['erro_buscacomdados'] = 'Nenhum CEP Não Encontrado';
                             }  else {
+                                //se não tiver erros, retorna o objeto com os dados
                                 return $resultado;
                             }
 
@@ -97,6 +93,7 @@ $resultado = '';
     }
  
     function ValidUF (String $uf) :bool{
+        //todos os UF válidos
         $estadosBrasileiros = array(
             '1'=>'AC',
             '2'=>'AL',
@@ -126,7 +123,7 @@ $resultado = '';
             '26'=>'SE',
             '27'=>'TO'
         );
-         
+            //verifica se o informado é igual a alguns dos UF acima
             foreach($estadosBrasileiros as $key)
             {
                 if($uf == $key){

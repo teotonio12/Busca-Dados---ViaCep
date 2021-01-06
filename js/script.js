@@ -12,5 +12,5 @@ function openBusca(evt, cityName) {
     evt.currentTarget.className += " active";
   }
   
-  // Get the element with id="defaultOpen" and click on it
-  document.getElementById("defaultOpen").click();
+  // chama a função para abrir página no inicio
+  document.getElementById("inicio").click();

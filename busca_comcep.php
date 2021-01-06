@@ -21,20 +21,17 @@ $resultado = '';
                 //recebe os dados
                 $resultado = BuscaCepViaCep($cep);
 
-               
+                    //verifica se existe o cep
+                    if(property_exists($resultado,'erro')){
 
-                //verifica se existe o cep
-                if(property_exists($resultado,'erro')){
-
-                    //informa que o cep não foi encontrado
-                    $GLOBALS['erro_buscacomcep'] = 'CEP Não Encontrado';
-                } else {
-                    return $resultado;
-                }
+                        //informa que o cep não foi encontrado
+                        $GLOBALS['erro_buscacomcep'] = 'CEP Não Encontrado';
+                    } else {
+                        return $resultado;
+                    }
 
             } else {//se não for um cep valido não realiza a consulta e os objetos continuam vazio
             
-
                 //informa que o cep é inválido
                 $GLOBALS['erro_buscacomcep'] = 'CEP inválido';
             } 
@@ -42,7 +39,6 @@ $resultado = '';
         
         
     }
-
 
 
     function FilterCep (String $cep):String {

@@ -81,4 +81,10 @@
             .btn:hover {
             opacity: 1;
             }
+
+            #erro {
+                width:300px;
+                margin: auto;
+                border: 2px solid red;
+              }
         

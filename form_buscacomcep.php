@@ -1,4 +1,4 @@
-
+    <!-- Formulario para consulta com o CEP -->
     <form action="." method="post" style="max-width:500px;margin:auto">
         <h2>Informe o CEP</h2>
         <div class="input-container">

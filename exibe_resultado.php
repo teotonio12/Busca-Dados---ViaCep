@@ -1,11 +1,3 @@
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
-#erro {
-  width:300px;
-  margin: auto;
-  border: 2px solid red;
-}
-</style>
 <?php 
 //verifica se houve consulta com Cep
 if(isset($_POST['cep'])){
