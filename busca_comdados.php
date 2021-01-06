@@ -3,6 +3,9 @@
 //definição da variavel de erro Global
 $erro_buscacomdados = '';
 
+//inicia a variavel
+$resultado = '';
+
     function BuscaComDados (){
         //verifica se foi informado o uf, como os tres dados são obrigatorio, consequentemente informou os tres
         if(isset ($_POST['uf'])){  
@@ -26,6 +29,8 @@ $erro_buscacomdados = '';
                         //busca os dados ViaCep
                         $resultado = BuscaDadosViaCep ($uf,$cidade,$logradouro);
 
+                        return $resultado;
+                        
                             //verifica se existe o resultado foi encontrado
                             if(count($resultado) == 0){
                                 //informa que o cep não foi encontrado
@@ -46,7 +51,7 @@ $erro_buscacomdados = '';
             }
 
         }
-        return $resultado;
+        
 
     }
 

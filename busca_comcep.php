@@ -2,6 +2,8 @@
 //definição da variavel de erro Global
 $erro_buscacomcep = '';
 
+//inicia a variavel
+$resultado = '';
     function BuscaComCep () {
        
         //verifica se foi informado o cep
@@ -19,6 +21,8 @@ $erro_buscacomcep = '';
                 //recebe os dados
                 $resultado = BuscaCepViaCep($cep);
 
+                return $resultado;
+
                 //verifica se existe o cep
                 if(property_exists($resultado,'erro')){
 
@@ -34,7 +38,7 @@ $erro_buscacomcep = '';
             } 
         } 
         
-        return $resultado;
+        
     }
 
 
