@@ -40,11 +40,11 @@ $resultado = '';
                             }
 
                     } else {
-                        $GLOBALS['erro_buscacomdados'] = "Consulta de Logradouro com Mínimo de 3 Caracteres";
+                        $GLOBALS['erro_buscacomdados'] = "Consulta de Logradouro, utilize no mínimo 3 caracteres";
                     }
 
                 } else {
-                    $GLOBALS['erro_buscacomdados'] = "Consulta de Cidade com Mínimo de 3 Caracteres";
+                    $GLOBALS['erro_buscacomdados'] = "Consulta de Cidade, utilize no mínimo 3 caracteres";
                 }
 
             } else {

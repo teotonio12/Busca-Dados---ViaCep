@@ -7,7 +7,7 @@
     <div class="col-sm-4">
         <h3>Recomendação</h3>
         <ul>
-            <li>CEP - Informar 8 digitos, sem espaços e caracteres especiais.</li>
+            <li>CEP - Informar 8 dígitos, sem espaços e caracteres especiais.</li>
             <li>UF - Apenas UF's brasileiros</li>
             <li>Cidade e Logradouro - Informar no mínimo 3 caracteres.</li>
         </ul>
